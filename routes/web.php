@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('posts',       \App\Http\Livewire\Posts::class)->middleware(['auth'])->name('posts');
+
+
+Route::get('/laratrust', function () {
+    return view('laratrust');
+})->middleware(['auth'])->name('laratrust');
+
 Route::get('/', function () {
     return view('welcome');
 });
